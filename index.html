@@ -6,87 +6,11 @@
   <title>Radhika Bansal | Economist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream: #f5f0e8;
-      --ink: #1a1714;
-      --rust: #8b3a2a;
-      --sand: #c9b99a;
-      --muted: #6b6259;
-      --light-line: #ddd5c5;
-    }
-
-    html { font-size: 16px; scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--cream);
-      color: var(--ink);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Subtle grain overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.5;
-    }
-
-    /* ---- LAYOUT ---- */
-    .site-wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ---- NAV ---- */
-    nav {
-      padding: 2.5rem 0 2rem;
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--light-line);
-      animation: fadeDown 0.8s ease both;
-    }
-
-    .nav-name {
-      font-size: 1.15rem;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--rust); }
-
-    /* ---- HERO ---- */
     .hero {
       display: grid;
-      grid-template-columns: 1fr 340px;
+      grid-template-columns: 1fr 320px;
       gap: 5rem;
       align-items: center;
       padding: 6rem 0 5rem;
@@ -102,10 +26,7 @@
       margin-bottom: 0.3rem;
     }
 
-    .hero-text h1 em {
-      font-style: italic;
-      color: var(--rust);
-    }
+    .hero-text h1 em { font-style: italic; color: var(--rust); }
 
     .hero-subtitle {
       font-family: 'DM Mono', monospace;
@@ -113,56 +34,26 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 2.2rem;
-      margin-top: 0.8rem;
+      margin: 0.8rem 0 2.2rem;
     }
 
     .hero-bio {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       font-weight: 300;
-      line-height: 1.75;
+      line-height: 1.78;
       color: #3a3330;
       max-width: 520px;
-    }
-
-    .hero-bio a {
-      color: var(--rust);
-      text-decoration: underline;
-      text-underline-offset: 3px;
     }
 
     .hero-contact {
       margin-top: 2rem;
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.2rem;
+      flex-wrap: wrap;
     }
 
-    .btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.65rem 1.4rem;
-      border: 1px solid var(--ink);
-      color: var(--ink);
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn:hover { background: var(--ink); color: var(--cream); }
-
-    .btn-ghost {
-      border-color: var(--sand);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover { background: transparent; color: var(--rust); border-color: var(--rust); }
-
-    /* Photo */
-    .hero-photo {
-      position: relative;
-    }
+    .hero-photo { position: relative; }
 
     .hero-photo::before {
       content: '';
@@ -170,16 +61,6 @@
       inset: -12px -12px 12px 12px;
       border: 1px solid var(--sand);
       z-index: 0;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-      position: relative;
-      z-index: 1;
-      filter: sepia(10%) contrast(1.05);
     }
 
     .photo-placeholder {
@@ -192,38 +73,34 @@
       position: relative;
       z-index: 1;
       font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--muted);
-      letter-spacing: 0.08em;
-    }
-
-    /* ---- RESEARCH ---- */
-    .section {
-      padding: 4.5rem 0;
-      border-bottom: 1px solid var(--light-line);
-      animation: fadeUp 0.9s 0.2s ease both;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 2.5rem;
     }
 
+    .hero-photo img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: sepia(8%) contrast(1.05);
+    }
+
+    /* Research interests */
     .interests-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .interest-card {
       padding: 1.8rem 1.5rem;
       border: 1px solid var(--light-line);
       background: rgba(255,255,255,0.35);
-      transition: border-color 0.2s, transform 0.2s;
+      transition: border-color 0.2s, transform 0.25s;
     }
 
     .interest-card:hover {
@@ -240,10 +117,10 @@
     }
 
     .interest-title {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 400;
       line-height: 1.3;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
     }
 
     .interest-desc {
@@ -253,12 +130,11 @@
       line-height: 1.65;
     }
 
-    /* ---- AFFILIATION ---- */
-    .affiliation-row {
+    /* Affiliation */
+    .affil-row {
       display: flex;
       align-items: center;
       gap: 3rem;
-      padding: 3rem 0;
     }
 
     .affil-badge {
@@ -273,145 +149,90 @@
     }
 
     .affil-text {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.65;
       color: #3a3330;
     }
 
-    .affil-text strong {
-      font-weight: 600;
-      color: var(--ink);
-    }
+    .affil-text strong { font-weight: 600; color: var(--ink); }
 
-    /* ---- FOOTER ---- */
-    footer {
-      padding: 3rem 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-email a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-    }
-
-    .footer-email a:hover { color: var(--rust); }
-
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--sand);
-      letter-spacing: 0.08em;
-    }
-
-    /* ---- ANIMATIONS ---- */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ---- RESPONSIVE ---- */
     @media (max-width: 720px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 4rem 0 3rem;
-      }
-      .hero-photo { max-width: 280px; }
+      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 0 3rem; }
+      .hero-photo { max-width: 260px; }
       .interests-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-      .affiliation-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      nav { flex-direction: column; gap: 1.2rem; }
-      .nav-links { gap: 1.5rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .affil-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
     }
   </style>
 </head>
 <body>
-  <div class="site-wrapper">
+<div class="site-wrapper">
+  <nav>
+    <a class="nav-name" href="index.html">Radhika Bansal</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Bio</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
 
-    <!-- NAV -->
-    <nav>
-      <a class="nav-name" href="#">Radhika Bansal</a>
-      <ul class="nav-links">
-        <li><a href="#">Bio</a></li>
-        <li><a href="https://sites.google.com/ucr.edu/radhikabansal/teaching" target="_blank">Teaching</a></li>
-        <li><a href="https://sites.google.com/ucr.edu/radhikabansal/writing" target="_blank">Writing</a></li>
-        <li><a href="https://sites.google.com/ucr.edu/radhikabansal/cv" target="_blank">CV</a></li>
-      </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Radhika<br><em>Bansal</em></h1>
-        <p class="hero-subtitle">PhD Candidate · Economics · UC Riverside</p>
-        <p class="hero-bio">
-          I am a PhD candidate in Economics at the University of California, Riverside. My research interests are in Labor Economics and Development Economics, with a particular focus on the labor market outcomes of college-educated workers in US cities.
-        </p>
-        <div class="hero-contact">
-          <a class="btn" href="mailto:rbans007@ucr.edu">Get in Touch</a>
-          <a class="btn btn-ghost" href="https://sites.google.com/ucr.edu/radhikabansal/cv" target="_blank">View CV</a>
-        </div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Radhika<br><em>Bansal</em></h1>
+      <p class="hero-subtitle">PhD Candidate · Economics · UC Riverside</p>
+      <p class="hero-bio">
+        I am a PhD candidate in Economics at the University of California, Riverside.
+        My research interests are in Labor Economics and Development Economics,
+        with a particular focus on the labor market outcomes of college-educated workers in US cities.
+      </p>
+      <div class="hero-contact">
+        <a class="btn" href="mailto:rbans007@ucr.edu">Get in Touch</a>
+        <a class="btn btn-ghost" href="cv.html">View CV</a>
       </div>
-      <div class="hero-photo">
-        <div class="photo-placeholder">Photo</div>
-      </div>
-    </section>
+    </div>
+    <div class="hero-photo">
+      <!-- Replace with: <img src="photo.jpg" alt="Radhika Bansal"> -->
+      <div class="photo-placeholder">Your Photo Here</div>
+    </div>
+  </section>
 
-    <!-- RESEARCH INTERESTS -->
-    <section class="section">
-      <p class="section-label">Research Interests</p>
-      <div class="interests-grid">
-        <div class="interest-card">
-          <div class="interest-num">01 —</div>
-          <div class="interest-title">Labor Economics</div>
-          <p class="interest-desc">Examining how labor markets function, with attention to wages, employment, and worker outcomes.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-num">02 —</div>
-          <div class="interest-title">Development Economics</div>
-          <p class="interest-desc">Understanding economic growth, inequality, and opportunity in developing and transitional economies.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-num">03 —</div>
-          <div class="interest-title">Urban Labor Markets</div>
-          <p class="interest-desc">Studying the labor market outcomes of college-educated workers across US cities and regions.</p>
-        </div>
+  <section class="section">
+    <p class="section-label">Research Interests</p>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <div class="interest-num">01 —</div>
+        <div class="interest-title">Labor Economics</div>
+        <p class="interest-desc">Examining how labor markets function, with attention to wages, employment, and worker outcomes.</p>
       </div>
-    </section>
-
-    <!-- AFFILIATION -->
-    <section class="section" style="border-bottom: none;">
-      <p class="section-label">Affiliation</p>
-      <div class="affiliation-row">
-        <div class="affil-badge">UCR · Economics</div>
-        <p class="affil-text">
-          <strong>University of California, Riverside</strong><br>
-          Department of Economics<br>
-          PhD Candidate
-        </p>
+      <div class="interest-card">
+        <div class="interest-num">02 —</div>
+        <div class="interest-title">Development Economics</div>
+        <p class="interest-desc">Understanding economic growth, inequality, and opportunity in developing and transitional economies.</p>
       </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-email">
-        <a href="mailto:rbans007@ucr.edu">rbans007@ucr.edu</a>
+      <div class="interest-card">
+        <div class="interest-num">03 —</div>
+        <div class="interest-title">Urban Labor Markets</div>
+        <p class="interest-desc">Studying the labor market outcomes of college-educated workers across US cities and regions.</p>
       </div>
-      <div class="footer-copy">© Radhika Bansal</div>
-    </footer>
+    </div>
+  </section>
 
-  </div>
+  <section class="section">
+    <p class="section-label">Affiliation</p>
+    <div class="affil-row">
+      <div class="affil-badge">UCR · Economics</div>
+      <p class="affil-text">
+        <strong>University of California, Riverside</strong><br>
+        Department of Economics · PhD Candidate
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-email"><a href="mailto:rbans007@ucr.edu">rbans007@ucr.edu</a></div>
+    <div class="footer-copy">© Radhika Bansal</div>
+  </footer>
+</div>
 </body>
 </html>

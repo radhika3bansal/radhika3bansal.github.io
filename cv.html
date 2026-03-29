@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV · Radhika Bansal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cv-intro {
+      font-size: 1.15rem;
+      font-weight: 300;
+      line-height: 1.78;
+      color: #3a3330;
+      max-width: 580px;
+      margin-bottom: 3rem;
+    }
+
+    .cv-download-box {
+      border: 1px solid var(--light-line);
+      background: rgba(255,255,255,0.4);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .cv-download-left h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 0.4rem;
+    }
+
+    .cv-download-left p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .cv-section { margin-bottom: 3rem; }
+
+    .cv-section-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sand);
+      border-bottom: 1px solid var(--light-line);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-entry {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 2rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--light-line);
+      align-items: baseline;
+    }
+
+    .cv-entry:last-child { border-bottom: none; }
+
+    .cv-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
+    .cv-detail { font-size: 1.05rem; font-weight: 300; line-height: 1.6; }
+    .cv-detail strong { font-weight: 600; }
+    .cv-detail span {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    @media (max-width: 600px) {
+      .cv-download-box { flex-direction: column; align-items: flex-start; }
+      .cv-entry { grid-template-columns: 1fr; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+  <nav>
+    <a class="nav-name" href="index.html">Radhika Bansal</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Bio</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="page-label">Curriculum Vitae</p>
+    <h1 class="page-title">Curriculum<br><em>Vitae</em></h1>
+  </div>
+
+  <section class="section">
+    <div class="cv-download-box">
+      <div class="cv-download-left">
+        <h2>Full CV — PDF</h2>
+        <p>Most recent version</p>
+      </div>
+      <!-- Update href to your actual CV PDF file, e.g. href="cv.pdf" -->
+      <a class="btn" href="cv.pdf" target="_blank">Download PDF</a>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">Education</div>
+      <div class="cv-entry">
+        <div class="cv-year">2021–Present</div>
+        <div class="cv-detail">
+          <strong>University of California, Riverside</strong>
+          <span>PhD Candidate, Economics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">Research Fields</div>
+      <div class="cv-entry">
+        <div class="cv-year">Primary</div>
+        <div class="cv-detail">Labor Economics · Development Economics</div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-year">Focus</div>
+        <div class="cv-detail">Labor market outcomes of college-educated workers in US cities</div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">Contact</div>
+      <div class="cv-entry">
+        <div class="cv-year">Email</div>
+        <div class="cv-detail"><a href="mailto:rbans007@ucr.edu" style="color:var(--rust);text-decoration:none;">rbans007@ucr.edu</a></div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-year">Institution</div>
+        <div class="cv-detail">University of California, Riverside<span>Department of Economics</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-email"><a href="mailto:rbans007@ucr.edu">rbans007@ucr.edu</a></div>
+    <div class="footer-copy">© Radhika Bansal</div>
+  </footer>
+</div>
+</body>
+</html>

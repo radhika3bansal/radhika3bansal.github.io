@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teaching · Radhika Bansal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .teaching-intro {
+      font-size: 1.15rem;
+      font-weight: 300;
+      line-height: 1.78;
+      color: #3a3330;
+      max-width: 580px;
+      margin-bottom: 3.5rem;
+    }
+
+    .course-group {
+      margin-bottom: 3rem;
+    }
+
+    .course-group-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sand);
+      border-bottom: 1px solid var(--light-line);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .course-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--light-line);
+      transition: background 0.15s;
+    }
+
+    .course-row:last-child { border-bottom: none; }
+
+    .course-row:hover { background: rgba(255,255,255,0.4); padding-left: 0.5rem; }
+
+    .course-name {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: var(--ink);
+    }
+
+    .course-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    .course-tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rust);
+      border: 1px solid var(--rust);
+      padding: 0.1rem 0.4rem;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      opacity: 0.75;
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--light-line);
+      margin-bottom: 4rem;
+    }
+
+    .stat-item {
+      padding: 1.8rem 2rem;
+      border-right: 1px solid var(--light-line);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--rust);
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-desc {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .stat-strip { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--light-line); }
+      .course-row { grid-template-columns: 1fr; gap: 0.3rem; }
+      .course-meta { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+  <nav>
+    <a class="nav-name" href="index.html">Radhika Bansal</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Bio</a></li>
+      <li><a href="teaching.html" class="active">Teaching</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="page-label">Teaching</p>
+    <h1 class="page-title">Teaching<br><em>Experience</em></h1>
+  </div>
+
+  <section class="section">
+    <p class="section-label">At a Glance</p>
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-desc">Courses as TA</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-desc">Institutions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-desc">Years Teaching</div>
+      </div>
+    </div>
+
+    <div class="course-group">
+      <div class="course-group-title">UC Riverside</div>
+
+      <div class="course-row">
+        <div class="course-name">Introductory Econometrics <span class="course-tag">New</span></div>
+        <div class="course-meta">Winter 2026</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">Introduction to Econometrics</div>
+        <div class="course-meta">Fall 2024 · Spring 2025 · Fall 2025</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">Principles of Microeconomics</div>
+        <div class="course-meta">Winter 2025</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">Intermediate Microeconomics</div>
+        <div class="course-meta">Summer 2024 · Fall 2023</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">Introduction to Macroeconomics</div>
+        <div class="course-meta">Summer 2024</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">Introduction to Microeconomics</div>
+        <div class="course-meta">Spring 2024</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">Intermediate Macroeconomics</div>
+        <div class="course-meta">Winter 2024</div>
+      </div>
+    </div>
+
+    <div class="course-group">
+      <div class="course-group-title">Shiv Nadar University (SNU)</div>
+
+      <div class="course-row">
+        <div class="course-name">Principles of Microeconomics</div>
+        <div class="course-meta">Monsoon 2020</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">Intermediate Microeconomics</div>
+        <div class="course-meta">Spring 2021</div>
+      </div>
+      <div class="course-row">
+        <div class="course-name">International Finance</div>
+        <div class="course-meta">Spring 2022</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-email"><a href="mailto:rbans007@ucr.edu">rbans007@ucr.edu</a></div>
+    <div class="footer-copy">© Radhika Bansal</div>
+  </footer>
+</div>
+</body>
+</html>
