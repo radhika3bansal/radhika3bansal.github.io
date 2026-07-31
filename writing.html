@@ -13,9 +13,7 @@
       border-bottom: 1px solid var(--light-line);
       transition: background 0.15s;
     }
-
     .paper:last-child { border-bottom: none; }
-
     .paper-meta {
       display: flex;
       align-items: center;
@@ -23,7 +21,6 @@
       margin-bottom: 0.9rem;
       flex-wrap: wrap;
     }
-
     .paper-tag {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
@@ -32,25 +29,21 @@
       padding: 0.2rem 0.6rem;
       border: 1px solid;
     }
-
     .tag-review {
       color: var(--rust);
       border-color: var(--rust);
       background: rgba(139,58,42,0.05);
     }
-
     .tag-progress {
       color: var(--muted);
       border-color: var(--sand);
     }
-
     .paper-coauthors {
       font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
       color: var(--muted);
       letter-spacing: 0.03em;
     }
-
     .paper-title {
       font-size: 1.45rem;
       font-weight: 400;
@@ -58,9 +51,13 @@
       margin-bottom: 1.2rem;
       color: var(--ink);
     }
-
     .paper-title em { font-style: italic; }
-
+    /* toggles side by side */
+    .paper-toggles {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
     .abstract-toggle {
       font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
@@ -77,28 +74,20 @@
       margin-bottom: 0;
       transition: opacity 0.2s;
     }
-
     .abstract-toggle:hover { opacity: 0.7; }
-
     .abstract-toggle .arrow {
       display: inline-block;
       transition: transform 0.25s;
     }
-
     .abstract-toggle.open .arrow { transform: rotate(90deg); }
-
-    .abstract-body {
+    .abstract-body, .slides-body {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.3s ease;
+      transition: max-height 0.45s ease, opacity 0.3s ease;
       opacity: 0;
     }
-
-    .abstract-body.open {
-      max-height: 600px;
-      opacity: 1;
-    }
-
+    .abstract-body.open { max-height: 700px; opacity: 1; }
+    .slides-body.open { max-height: 640px; opacity: 1; }
     .abstract-text {
       font-size: 1rem;
       font-weight: 300;
@@ -108,6 +97,15 @@
       border-left: 2px solid var(--light-line);
       padding-left: 1.5rem;
       margin-top: 1rem;
+    }
+    .slides-frame {
+      width: 100%;
+      max-width: 720px;
+      aspect-ratio: 16/10;
+      border: 1px solid var(--light-line);
+      background: rgba(255,255,255,0.4);
+      display: block;
+      margin-top: 1.3rem;
     }
   </style>
 </head>
@@ -122,12 +120,10 @@
       <li><a href="cv.html">CV</a></li>
     </ul>
   </nav>
-
   <div class="page-header">
     <p class="page-label">Research</p>
     <h1 class="page-title">Research </h1>
   </div>
-
   <!-- WORKING PAPERS -->
   <section class="section">
     <p class="section-label">Working Papers</p>
@@ -138,18 +134,19 @@
         <span class="paper-coauthors">with Ugo Antonio Troiano</span>
       </div>
       <h2 class="paper-title">Justice at What Cost? Penalties, Rape Deterrence,<br>and the Incentive to Murder</h2>
-         <button class="abstract-toggle" onclick="toggleAbstract(this)"><span class="arrow">›</span> Abstract</button>
-          <button class="abstract-toggle" onclick="toggleSlides(this)"><span class="arrow">›</span> Slides</button>
-        </div>
-        <div class="abstract-body">
-          <p class="abstract-text">
-            Increasing the penalties for a serious non-fatal crime can cost lives if the surviving victims are used as witnesses to convict the perpetrator of the non-fatal crime. In this paper, we consider the case of rape laws. First, we present a theoretical model to examine how increasing the penalty for one crime may lead the perpetrator to commit a collateral crime when the latter crime reduces the probability of conviction of the former. We then consider the cases of spousal rape laws and the mandatory minimum 25-year sentence for molestation against a child. Both treatments were introduced in the USA in a staggered fashion and increased the penalties for rape. We show, using a difference-in-differences design, that both treatments triggered an increase, respectively, in spousal homicides and child homicides.
-          </p>
-        </div>
-        <div class="slides-body">
-          <iframe class="slides-frame" src="https://drive.google.com/file/d/1b2k9jnvAl04HTVZf8IjE6FMi8sEPOoxE/preview" allowfullscreen></iframe>
-        </div>
+      <div class="paper-toggles">
+        <button class="abstract-toggle" onclick="toggleAbstract(this)"><span class="arrow">›</span> Abstract</button>
+        <button class="abstract-toggle" onclick="toggleSlides(this)"><span class="arrow">›</span> Slides</button>
       </div>
+      <div class="abstract-body">
+        <p class="abstract-text">
+          Increasing the penalties for a serious non-fatal crime can cost lives if the surviving victims are used as witnesses to convict the perpetrator of the non-fatal crime. In this paper, we consider the case of rape laws. First, we present a theoretical model to examine how increasing the penalty for one crime may lead the perpetrator to commit a collateral crime when the latter crime reduces the probability of conviction of the former. We then consider the cases of spousal rape laws and the mandatory minimum 25-year sentence for molestation against a child. Both treatments were introduced in the USA in a staggered fashion and increased the penalties for rape. We show, using a difference-in-differences design, that both treatments triggered an increase, respectively, in spousal homicides and child homicides.
+        </p>
+      </div>
+      <div class="slides-body">
+        <iframe class="slides-frame" src="https://drive.google.com/file/d/1b2k9jnvAl04HTVZf8IjE6FMi8sEPOoxE/preview" allowfullscreen></iframe>
+      </div>
+    </div>
 
     <div class="paper">
       <div class="paper-meta">
@@ -157,20 +154,18 @@
         <span class="paper-coauthors">with Shabana Mitra</span>
       </div>
       <h2 class="paper-title">Patriarchal Norms and Women's Work</h2>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">
-        <span class="arrow">›</span> Abstract
-      </button>
+      <div class="paper-toggles">
+        <button class="abstract-toggle" onclick="toggleAbstract(this)"><span class="arrow">›</span> Abstract</button>
         <button class="abstract-toggle" onclick="toggleSlides(this)"><span class="arrow">›</span> Slides</button>
+      </div>
       <div class="abstract-body">
         <p class="abstract-text">
           Patriarchal norms continue to shape women's opportunities and obligations in many low- and middle-income countries, often limiting their role in household and community decision-making. This paper examines whether large-scale public employment can unsettle such norms by expanding women's access to paid work. Drawing on nationally representative data from the India Human Development Survey and the phased implementation of the Mahatma Gandhi National Rural Employment Guarantee Act, we examine whether greater labour force participation erodes both sticky and non-sticky forms of patriarchy. Using a local randomization regression discontinuity design, we provide evidence that large-scale public employment programs can catalyse shifts in social expectations around women's economic roles, contributing to a gradual reconfiguration of household and community gender relations.
         </p>
       </div>
-       <div class="slides-body">
-          <!-- To embed slides, replace SLIDES_URL below with a Google Slides / PDF link and uncomment the iframe -->
-           <iframe class="slides-frame" src="https://drive.google.com/file/d/1cZjQzuujB6AEOW62KLqwV5nYKcah4ATq/view?usp=drive_link" allowfullscreen></iframe> 
-          
-        </div>
+      <div class="slides-body">
+        <iframe class="slides-frame" src="https://drive.google.com/file/d/1cZjQzuujB6AEOW62KLqwV5nYKcah4ATq/preview" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
@@ -182,7 +177,7 @@
       <div class="paper-meta">
         <span class="paper-tag tag-progress">In Progress</span>
       </div>
-      <h2 class="paper-title">Long- run Effects of Same-Gender Instructor</h2>
+      <h2 class="paper-title">Long-run Effects of Same-Gender Instructor</h2>
     </div>
 
     <div class="paper">
@@ -190,27 +185,13 @@
         <span class="paper-tag tag-progress">In Progress</span>
       </div>
       <h2 class="paper-title">Gender Biases in TA Evaluations</h2>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">
-        <span class="arrow">›</span> Abstract
-      </button>
+      <div class="paper-toggles">
+        <button class="abstract-toggle" onclick="toggleAbstract(this)"><span class="arrow">›</span> Abstract</button>
+      </div>
       <div class="abstract-body">
         <p class="abstract-text">
-          This study examines whether gender bias influences how students evaluate
-their teaching assistants (TAs). Using administrative, individual-level data on
-freshman students and TAs at the University of California, Riverside from Fall
-2016 to Winter 2025, we test whether students assign different evaluations based
-on gender match. Leveraging within-course variation in TA assignment, we
-isolate the causal effect of student–TA gender congruence while holding course
-content and structure constant.
-We find evidence of a statistically significant same-gender effect in teaching
-
-evaluations. Female students rate female TAs approximately 0.20 standard de-
-viations higher relative to male students rating male TAs. The results are robust
-
-when focusing on the fall quarter of freshman year, excluding COVID-affected
-terms, and restricting the sample to courses with a single TA. These findings
-suggest that gender congruence meaningfully shapes student evaluations and
-highlight the role of in-group bias in academic assessment contexts.
+          This study examines whether gender bias influences how students evaluate their teaching assistants (TAs). Using administrative, individual-level data on freshman students and TAs at the University of California, Riverside from Fall 2016 to Winter 2025, we test whether students assign different evaluations based on gender match. Leveraging within-course variation in TA assignment, we isolate the causal effect of student–TA gender congruence while holding course content and structure constant. We find evidence of a statistically significant same-gender effect in teaching evaluations. Female students rate female TAs approximately 0.20 standard deviations higher relative to male students rating male TAs. The results are robust when focusing on the fall quarter of freshman year, excluding COVID-affected terms, and restricting the sample to courses with a single TA. These findings suggest that gender congruence meaningfully shapes student evaluations and highlight the role of in-group bias in academic assessment contexts.
+        </p>
       </div>
     </div>
   </section>
@@ -220,13 +201,22 @@ highlight the role of in-group bias in academic assessment contexts.
     <div class="footer-copy">© Radhika Bansal</div>
   </footer>
 </div>
-
 <script>
-  function toggleAbstract(btn) {
-    btn.classList.toggle('open');
-    const body = btn.nextElementSibling;
-    body.classList.toggle('open');
+  function togglePanel(btn, cls) {
+    const paper = btn.closest('.paper');
+    const target = paper.querySelector('.' + cls);
+    const wasOpen = target.classList.contains('open');
+    // close everything in this paper first (one at a time)
+    paper.querySelectorAll('.abstract-body, .slides-body').forEach(el => el.classList.remove('open'));
+    paper.querySelectorAll('.abstract-toggle').forEach(b => b.classList.remove('open'));
+    // reopen only if it was closed
+    if (!wasOpen) {
+      target.classList.add('open');
+      btn.classList.add('open');
+    }
   }
+  function toggleAbstract(btn) { togglePanel(btn, 'abstract-body'); }
+  function toggleSlides(btn) { togglePanel(btn, 'slides-body'); }
 </script>
 </body>
 </html>
