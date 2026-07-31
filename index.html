@@ -119,7 +119,6 @@
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      flex-wrap: wrap;
     }
     .btn {
       font-family: 'DM Mono', monospace;
@@ -172,7 +171,7 @@
       color: var(--muted);
       letter-spacing: 0.08em;
     }
-    /* ---- SECTIONS ---- */
+    /* ---- RESEARCH ---- */
     .section {
       padding: 4.5rem 0;
       border-bottom: 1px solid var(--light-line);
@@ -220,109 +219,12 @@
       color: var(--muted);
       line-height: 1.65;
     }
-    /* ---- RESEARCH / PAPERS ---- */
-    .paper {
-      padding: 2rem 0;
-      border-top: 1px solid var(--light-line);
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 2rem;
-    }
-    .paper:first-of-type { border-top: none; }
-    .paper-status {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-top: 0.4rem;
-    }
-    .paper-status .dot {
-      display: inline-block;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--rust);
-      margin-right: 0.5rem;
-      vertical-align: middle;
-    }
-    .paper-title {
-      font-size: 1.45rem;
-      font-weight: 400;
-      line-height: 1.3;
-      margin-bottom: 0.35rem;
-    }
-    .paper-authors {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.05em;
-      color: var(--sand);
-      text-transform: uppercase;
-      margin-bottom: 0.9rem;
-    }
-    .paper-abstract {
-      font-size: 1.02rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: #3a3330;
-    }
-    /* ---- WORK IN PROGRESS LIST ---- */
-    .wip-list { list-style: none; }
-    .wip-list li {
-      padding: 1rem 0;
-      border-top: 1px solid var(--light-line);
-      font-size: 1.15rem;
-      font-weight: 300;
-      color: #3a3330;
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-    }
-    .wip-list li:first-child { border-top: none; }
-    .wip-list .wip-mark {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--sand);
-    }
-    /* ---- TWO COLUMN (Education / Awards) ---- */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-    .timeline-item {
-      padding: 1.1rem 0;
-      border-top: 1px solid var(--light-line);
-    }
-    .timeline-item:first-child { border-top: none; }
-    .timeline-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-    }
-    .timeline-title {
-      font-size: 1.18rem;
-      font-weight: 400;
-    }
-    .timeline-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.06em;
-      color: var(--sand);
-      white-space: nowrap;
-    }
-    .timeline-sub {
-      font-size: 0.98rem;
-      font-weight: 300;
-      color: var(--muted);
-      margin-top: 0.15rem;
-    }
     /* ---- AFFILIATION ---- */
     .affiliation-row {
       display: flex;
       align-items: center;
       gap: 3rem;
-      padding: 1rem 0;
+      padding: 3rem 0;
     }
     .affil-badge {
       font-family: 'DM Mono', monospace;
@@ -350,22 +252,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
     }
-    .footer-links {
-      display: flex;
-      gap: 1.6rem;
-    }
-    .footer-links a, .footer-email a {
+    .footer-email a {
       font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       color: var(--muted);
       text-decoration: none;
       letter-spacing: 0.05em;
       transition: color 0.2s;
     }
-    .footer-links a:hover, .footer-email a:hover { color: var(--rust); }
+    .footer-email a:hover { color: var(--rust); }
     .footer-copy {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -390,11 +286,9 @@
       }
       .hero-photo { max-width: 280px; }
       .interests-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-      .paper { grid-template-columns: 1fr; gap: 0.6rem; }
-      .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .affiliation-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
       nav { flex-direction: column; gap: 1.2rem; }
-      .nav-links { gap: 1.5rem; flex-wrap: wrap; }
+      .nav-links { gap: 1.5rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
     }
   </style>
@@ -405,9 +299,9 @@
     <nav>
       <a class="nav-name" href="#">Radhika Bansal</a>
       <ul class="nav-links">
-        <li><a href="#research">Research</a></li>
-        <li><a href="#education">Education</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="https://sites.google.com/ucr.edu/radhikabansal/teaching" target="_blank">Teaching</a></li>
+        <li><a href="https://sites.google.com/ucr.edu/radhikabansal/writing" target="_blank">Research</a></li>
         <li><a href="https://sites.google.com/ucr.edu/radhikabansal/cv" target="_blank">CV</a></li>
       </ul>
     </nav>
@@ -417,8 +311,7 @@
         <h1>Radhika<br><em>Bansal</em></h1>
         <p class="hero-subtitle">PhD Candidate · Economics · UC Riverside</p>
         <p class="hero-bio">
-          I am a PhD candidate in Economics at the University of California, Riverside. My research sits at the intersection of labor and development economics, with a focus on gender discrimination and the economics of crime.
-        </p>
+           I am a PhD candidate in Economics at the University of California, Riverside. My research sits at the intersection of labor and development economics, with a focus on gender discrimination and the economics of crime.
         <div class="hero-contact">
           <a class="btn" href="mailto:rbans007@ucr.edu">Get in Touch</a>
           <a class="btn btn-ghost" href="https://sites.google.com/ucr.edu/radhikabansal/cv" target="_blank">View CV</a>
@@ -449,100 +342,6 @@
         </div>
       </div>
     </section>
-    <!-- RESEARCH / WORKING PAPERS -->
-    <section class="section" id="research">
-      <p class="section-label">Working Papers</p>
-
-      <div class="paper">
-        <div class="paper-status"><span class="dot"></span>Under Review</div>
-        <div>
-          <h3 class="paper-title">Justice at What Cost? Penalties, Rape Deterrence, and the Incentive to Murder</h3>
-          <p class="paper-authors">With Ugo Antonio Troiano</p>
-          <p class="paper-abstract">Increasing the penalty for a serious non-fatal crime can cost lives when surviving victims serve as witnesses. Using a theoretical model and difference-in-differences designs around U.S. spousal rape laws and mandatory minimum sentences for child molestation, we show that both reforms triggered increases in spousal and child homicides.</p>
-        </div>
-      </div>
-
-      <div class="paper">
-        <div class="paper-status"><span class="dot"></span>Under Review</div>
-        <div>
-          <h3 class="paper-title">Patriarchal Norms and Women's Work</h3>
-          <p class="paper-authors">With Shabana Mitra · Presented at 47th EBES Conference, Berlin</p>
-          <p class="paper-abstract">Can large-scale public employment unsettle patriarchal norms by expanding women's access to paid work? Using the India Human Development Survey and the phased rollout of MGNREGA within a local randomization RD design, we find that public employment programs catalyse shifts in social expectations around women's economic roles.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK IN PROGRESS -->
-    <section class="section">
-      <p class="section-label">Work in Progress</p>
-      <ul class="wip-list">
-        <li><span class="wip-mark">01</span> Gender Biases in TA Evaluations — same-gender congruence and in-group bias in student ratings at a large public university.</li>
-        <li><span class="wip-mark">02</span> Long-Run Effects of Same-Gender Instructors.</li>
-        <li><span class="wip-mark">03</span> Vertical Alignment and the Implementation Chain: Evidence from Rule-Based Reservation in Rural India — with Shruti Agarwal.</li>
-      </ul>
-    </section>
-
-    <!-- EDUCATION + AWARDS -->
-    <section class="section" id="education">
-      <div class="two-col">
-        <div>
-          <p class="section-label">Education</p>
-          <div class="timeline-item">
-            <div class="timeline-head">
-              <span class="timeline-title">Ph.D. in Economics</span>
-              <span class="timeline-date">2022 —</span>
-            </div>
-            <p class="timeline-sub">University of California, Riverside</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-head">
-              <span class="timeline-title">M.S. in Economics</span>
-              <span class="timeline-date">2020 – 2022</span>
-            </div>
-            <p class="timeline-sub">Shiv Nadar University, India</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-head">
-              <span class="timeline-title">B.Sc. (Hons.) Mathematics</span>
-              <span class="timeline-date">2015 – 2018</span>
-            </div>
-            <p class="timeline-sub">University of Delhi, India</p>
-          </div>
-        </div>
-        <div>
-          <p class="section-label">Awards & Fellowships</p>
-          <div class="timeline-item">
-            <div class="timeline-head">
-              <span class="timeline-title">Dean's Distinguished Fellowship</span>
-              <span class="timeline-date">2022 – 2027</span>
-            </div>
-            <p class="timeline-sub">UC Riverside</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-head">
-              <span class="timeline-title">CHASS Campbell Family Endowed Fellowship</span>
-              <span class="timeline-date">2026</span>
-            </div>
-            <p class="timeline-sub">UC Riverside</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-head">
-              <span class="timeline-title">Laura Bassi Scholarship</span>
-              <span class="timeline-date">2026</span>
-            </div>
-            <p class="timeline-sub">&nbsp;</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-head">
-              <span class="timeline-title">Outstanding TA Award</span>
-              <span class="timeline-date">2026</span>
-            </div>
-            <p class="timeline-sub">UC Riverside</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- AFFILIATION -->
     <section class="section" style="border-bottom: none;">
       <p class="section-label">Affiliation</p>
@@ -560,12 +359,11 @@
       <div class="footer-email">
         <a href="mailto:rbans007@ucr.edu">rbans007@ucr.edu</a>
       </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/RadhikaBansal" target="_blank">LinkedIn</a>
-        <a href="https://sites.google.com/ucr.edu/radhikabansal/cv" target="_blank">CV</a>
-      </div>
       <div class="footer-copy">© Radhika Bansal</div>
     </footer>
   </div>
 </body>
 </html>
+
+edit this based on my cv
+https://radhika3bansal.github.io/index.html
